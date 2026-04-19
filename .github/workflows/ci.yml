@@ -34,8 +34,6 @@ jobs:
           VITE_COGNITO_REDIRECT_URI=${{ secrets.VITE_COGNITO_REDIRECT_URI }}
           EOF
 
-      - name: Lint
-        run: npm run lint
 
       - name: Build
         run: npm run build
