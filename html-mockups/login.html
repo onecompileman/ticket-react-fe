@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket | Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #171717;
+            --paper: #f6f0e6;
+            --panel: rgba(252, 252, 252, 0.82);
+            --sky: #d9e6f7;
+            --mint: #dcebdd;
+            --sand: #efe4cc;
+            --rose: #efd9d9;
+            --white: #fcfcfc;
+            --line: 1.5px solid #8d8d97;
+            --shadow: 0 3px 0 rgba(35, 35, 38, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--ink);
+            font-family: "Space Grotesk", "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(217, 230, 247, 0.95) 0, rgba(217, 230, 247, 0.95) 18%, transparent 19%),
+                radial-gradient(circle at 88% 16%, rgba(220, 235, 221, 0.95) 0, rgba(220, 235, 221, 0.95) 14%, transparent 15%),
+                radial-gradient(circle at 82% 80%, rgba(239, 228, 204, 0.9) 0, rgba(239, 228, 204, 0.9) 13%, transparent 14%),
+                linear-gradient(180deg, #d8d4f0 0%, #ebe4d9 100%);
+            display: grid;
+            place-items: center;
+            padding: 24px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .login-shell {
+            width: min(1100px, 100%);
+            display: grid;
+            grid-template-columns: minmax(320px, 1.1fr) minmax(320px, 0.9fr);
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .login-showcase,
+        .login-panel {
+            border: var(--line);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .login-showcase {
+            background: linear-gradient(160deg, rgba(246, 240, 230, 0.9) 0%, rgba(255, 255, 255, 0.78) 100%);
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .login-showcase::after {
+            content: "";
+            position: absolute;
+            right: -60px;
+            bottom: -90px;
+            width: 220px;
+            height: 220px;
+            border-radius: 36px;
+            transform: rotate(18deg);
+            background: rgba(217, 230, 247, 0.75);
+            border: var(--line);
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            border: var(--line);
+            border-radius: 14px;
+            display: inline-grid;
+            place-items: center;
+            background: var(--sky);
+            font-weight: 700;
+        }
+
+        .brand-name {
+            font-family: "Syne", "Space Grotesk", sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+        }
+
+        .hero-copy {
+            max-width: 460px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: var(--line);
+            border-radius: 999px;
+            background: var(--white);
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: "Syne", "Space Grotesk", sans-serif;
+            font-size: clamp(2.3rem, 4vw, 4.1rem);
+            line-height: 0.95;
+            letter-spacing: -0.05em;
+        }
+
+        .hero-copy p {
+            margin: 18px 0 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 38ch;
+        }
+
+        .feature-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .feature-card {
+            border: var(--line);
+            border-radius: 18px;
+            padding: 14px;
+            background: var(--panel);
+            backdrop-filter: blur(8px);
+        }
+
+        .feature-card strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-card span {
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+
+        .login-panel {
+            background: rgba(245, 243, 236, 0.94);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            width: min(420px, 100%);
+            display: grid;
+            gap: 18px;
+        }
+
+        .login-card h2,
+        .login-card p {
+            margin: 0;
+        }
+
+        .login-card h2 {
+            font-size: 1.8rem;
+            line-height: 1.05;
+        }
+
+        .login-card p {
+            font-size: 0.95rem;
+            line-height: 1.55;
+            color: rgba(23, 23, 23, 0.82);
+        }
+
+        .auth-box {
+            border: var(--line);
+            border-radius: 22px;
+            background: var(--white);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            display: grid;
+            gap: 14px;
+        }
+
+        .auth-note {
+            border: var(--line);
+            border-radius: 16px;
+            padding: 12px 14px;
+            background: var(--rose);
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+
+        .google-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            border: var(--line);
+            border-radius: 999px;
+            padding: 14px 18px;
+            background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+            box-shadow: var(--shadow);
+            font-size: 1rem;
+            font-weight: 700;
+            transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+        }
+
+        .google-button:hover,
+        .google-button:focus-visible {
+            transform: translateY(-2px);
+            background: #fff8ef;
+            outline: none;
+        }
+
+        .google-icon {
+            width: 22px;
+            height: 22px;
+            flex: 0 0 22px;
+        }
+
+        .support-copy {
+            font-size: 0.82rem;
+            text-align: center;
+            color: rgba(23, 23, 23, 0.7);
+        }
+
+        .mini-stats {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .mini-stat {
+            border: var(--line);
+            border-radius: 16px;
+            background: var(--paper);
+            padding: 12px 14px;
+        }
+
+        .mini-stat strong {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .mini-stat span {
+            font-size: 0.82rem;
+            line-height: 1.45;
+        }
+
+        @media (max-width: 920px) {
+            .login-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            body {
+                padding: 14px;
+            }
+
+            .login-showcase,
+            .login-panel {
+                border-radius: 22px;
+                padding: 18px;
+            }
+
+            .login-panel {
+                padding: 18px;
+            }
+
+            .auth-box {
+                padding: 16px;
+            }
+
+            .mini-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="login-shell">
+        <section class="login-showcase" aria-label="Ticket introduction">
+            <div class="brand-row">
+                <span class="brand-mark">T</span>
+                <span class="brand-name">Ticket</span>
+            </div>
+
+            <div class="hero-copy">
+                <span class="eyebrow">Boards, tickets, and team flow in one place</span>
+                <h1>Sign in once. Pick up every task fast.</h1>
+                <p>Ticket keeps your boards, assignments, and sprint work organized behind one clean Google sign-in. No alternate auth paths, no extra friction.</p>
+            </div>
+
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <strong>Shared Boards</strong>
+                    <span>See personal and team workspaces without switching tools.</span>
+                </article>
+                <article class="feature-card">
+                    <strong>Fast Triage</strong>
+                    <span>Move tickets through backlog, review, and done with clarity.</span>
+                </article>
+                <article class="feature-card">
+                    <strong>Focused Access</strong>
+                    <span>Google-only entry keeps onboarding simple for internal teams.</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="login-panel" aria-label="Sign in form">
+            <div class="login-card">
+                <div>
+                    <h2>Welcome back</h2>
+                    <p>Continue to Ticket with your Google account. This mockup intentionally exposes only one authentication method.</p>
+                </div>
+
+                <div class="auth-box">
+                    <a class="google-button" href="home.html" aria-label="Sign in via Google">
+                        <svg class="google-icon" viewBox="0 0 24 24" aria-hidden="true" role="img">
+                            <path fill="#EA4335" d="M12 10.2v3.9h5.42c-.24 1.26-.96 2.32-2.04 3.03l3.3 2.56c1.92-1.77 3.02-4.38 3.02-7.48 0-.71-.06-1.39-.18-2.05H12z"/>
+                            <path fill="#4285F4" d="M12 22c2.7 0 4.96-.89 6.61-2.41l-3.3-2.56c-.92.62-2.1.98-3.31.98-2.55 0-4.71-1.72-5.48-4.03H3.1v2.63A9.99 9.99 0 0 0 12 22z"/>
+                            <path fill="#FBBC05" d="M6.52 13.98A6 6 0 0 1 6.21 12c0-.69.12-1.36.31-1.98V7.39H3.1A9.99 9.99 0 0 0 2 12c0 1.61.39 3.14 1.1 4.61l3.42-2.63z"/>
+                            <path fill="#34A853" d="M12 5.99c1.47 0 2.79.51 3.83 1.51l2.87-2.87C16.95 2.99 14.69 2 12 2A9.99 9.99 0 0 0 3.1 7.39l3.42 2.63C7.29 7.71 9.45 5.99 12 5.99z"/>
+                        </svg>
+                        <span>Sign In via Google</span>
+                    </a>
+
+                    <div class="auth-note">
+                        Access is limited to Google authentication for this screen. Email-password, SSO variants, and guest login are intentionally omitted.
+                    </div>
+
+                    <div class="mini-stats">
+                        <div class="mini-stat">
+                            <strong>One-step access</strong>
+                            <span>Enter the board area directly after Google auth.</span>
+                        </div>
+                        <div class="mini-stat">
+                            <strong>Workspace-ready</strong>
+                            <span>Designed to route into your Ticket home experience.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="support-copy">Need a different identity provider later? Add it in a separate version instead of mixing flows into this mockup.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

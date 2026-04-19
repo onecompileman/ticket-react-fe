@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket | Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-shell" id="board">
+        <header class="global-nav">
+            <div class="nav-left">
+                <span class="logo-mark">T</span>
+                <strong class="brand">Ticket</strong>
+                <a href="#board">Workspaces</a>
+                <a href="#board">Recent</a>
+                <a href="#board">Starred</a>
+                <a href="#board">Templates</a>
+            </div>
+            <div class="nav-right">
+                <a class="nav-create" href="#create-ticket">Create</a>
+                <div class="nav-search">Search</div>
+                <span class="nav-avatar">AM</span>
+            </div>
+        </header>
+
+        <section class="board-nav">
+            <div class="board-nav-left">
+                <h1>Marketing</h1>
+                <span class="board-badge">Private</span>
+                <span class="board-badge">Simya Marketing</span>
+                <span class="board-badge">+27</span>
+            </div>
+            <div class="board-nav-right">
+                <a class="ghost-btn" href="#board">Filter</a>
+                <a class="ghost-btn" href="#board">Search</a>
+                <a class="ghost-btn ghost-btn-strong" href="#create-ticket">Create Ticket</a>
+            </div>
+        </section>
+
+        <main class="board-wrap">
+            <section class="board-columns" aria-label="Ticket Board">
+                <article class="column">
+                    <div class="column-head">
+                        <h2>Backlog</h2>
+                        <div class="column-actions">
+                            <a href="#board">Edit</a>
+                            <a class="danger" href="#board">Delete</a>
+                        </div>
+                    </div>
+                    <a class="card" href="#ticket-detail">
+                        <span class="card-tag tag-blue"></span>
+                        <h3>Brainstorm customer survey</h3>
+                        <p>Collect goals and constraints from product and support before writing questions.</p>
+                        <div class="card-meta"><span>2 comments</span><span>AM</span></div>
+                    </a>
+                    <article class="card">
+                        <span class="card-tag tag-green"></span>
+                        <h3>Create promotion plan for user growth</h3>
+                        <p>Define paid and organic channels for launch week visibility.</p>
+                        <div class="card-meta"><span>4 subtasks</span><span>RK</span></div>
+                    </article>
+                    <article class="card">
+                        <span class="card-tag tag-pink"></span>
+                        <h3>Proofread Thai newsletters</h3>
+                        <p>Review localization tone and CTA consistency across all outgoing editions.</p>
+                        <div class="card-meta"><span>1 checklist</span><span>SL</span></div>
+                    </article>
+                    <a class="add-card" href="#create-ticket">+ Add a card</a>
+                </article>
+
+                <article class="column">
+                    <div class="column-head">
+                        <h2>In Progress</h2>
+                        <div class="column-actions">
+                            <a href="#board">Edit</a>
+                            <a class="danger" href="#board">Delete</a>
+                        </div>
+                    </div>
+                    <article class="card">
+                        <span class="card-tag tag-blue"></span>
+                        <h3>Do research on in-app conversion improvements</h3>
+                        <p>Map critical drop-off points and rank the highest impact optimization ideas.</p>
+                        <div class="card-meta"><span>1 comment</span><span>AM</span></div>
+                    </article>
+                    <article class="card">
+                        <span class="card-tag tag-yellow"></span>
+                        <h3>Prepare for OKR planning</h3>
+                        <p>Align growth outcomes with design scope and engineering capacity.</p>
+                        <div class="card-meta"><span>6 tasks</span><span>RK</span></div>
+                    </article>
+                    <article class="card">
+                        <span class="card-tag tag-green"></span>
+                        <h3>Format and upload iOS screenshots</h3>
+                        <p>Export localized variants and validate each screenshot on device frames.</p>
+                        <div class="card-meta"><span>3 links</span><span>SL</span></div>
+                    </article>
+                    <a class="add-card" href="#create-ticket">+ Add a card</a>
+                </article>
+
+                <article class="column">
+                    <div class="column-head">
+                        <h2>Waiting For</h2>
+                        <div class="column-actions">
+                            <a href="#board">Edit</a>
+                            <a class="danger" href="#board">Delete</a>
+                        </div>
+                    </div>
+                    <article class="card">
+                        <span class="card-tag tag-blue"></span>
+                        <h3>Do not add any card to this list</h3>
+                        <p>This lane is intentionally blocked until legal signs off on compliance copy.</p>
+                        <div class="card-meta"><span>Notice</span><span>PM</span></div>
+                    </article>
+                    <article class="card">
+                        <span class="card-tag tag-green"></span>
+                        <h3>Create AB tests for new app icon</h3>
+                        <p>Test readability and preference across app store placements.</p>
+                        <div class="card-meta"><span>6 votes</span><span>AM</span></div>
+                    </article>
+                    <a class="add-card" href="#create-ticket">+ Add a card</a>
+                </article>
+
+                <article class="column">
+                    <div class="column-head">
+                        <h2>In Review</h2>
+                        <div class="column-actions">
+                            <a href="#board">Edit</a>
+                            <a class="danger" href="#board">Delete</a>
+                        </div>
+                    </div>
+                    <article class="card">
+                        <span class="card-tag tag-pink"></span>
+                        <h3>Create 3 answers on Reddit</h3>
+                        <p>Draft thoughtful, non-promotional responses with helpful references.</p>
+                        <div class="card-meta"><span>3/3 checks</span><span>RK</span></div>
+                    </article>
+                    <article class="card">
+                        <span class="card-tag tag-blue"></span>
+                        <h3>Create Quora week 1 answers</h3>
+                        <p>Review quality and ensure responses align with brand voice.</p>
+                        <div class="card-meta"><span>2/2 checks</span><span>SL</span></div>
+                    </article>
+                    <a class="add-card" href="#create-ticket">+ Add a card</a>
+                </article>
+
+                <article class="column">
+                    <div class="column-head">
+                        <h2>Sprint 91 Done</h2>
+                        <div class="column-actions">
+                            <a href="#board">Edit</a>
+                            <a class="danger" href="#board">Delete</a>
+                        </div>
+                    </div>
+                    <article class="card">
+                        <span class="card-tag tag-blue"></span>
+                        <h3>Reply marketing tickets on Zoho Desk</h3>
+                        <p>Resolve all response backlog and map top recurring issue themes.</p>
+                        <div class="card-meta"><span>2 comments</span><span>AM</span></div>
+                    </article>
+                    <article class="card">
+                        <span class="card-tag tag-green"></span>
+                        <h3>Learning course week 1</h3>
+                        <p>Complete weekly assignments and publish notes for team learning.</p>
+                        <div class="card-meta"><span>3/3 checks</span><span>SL</span></div>
+                    </article>
+                    <a class="add-card" href="#create-ticket">+ Add a card</a>
+                </article>
+
+                <article class="column">
+                    <div class="column-head">
+                        <h2>Sprint 90 Done</h2>
+                        <div class="column-actions">
+                            <a href="#board">Edit</a>
+                            <a class="danger" href="#board">Delete</a>
+                        </div>
+                    </div>
+                    <article class="card">
+                        <span class="card-tag tag-green"></span>
+                        <h3>Call with growth partner in Vietnam</h3>
+                        <p>Review launch partner campaign options and handoff timeline.</p>
+                        <div class="card-meta"><span>1 note</span><span>RK</span></div>
+                    </article>
+                    <article class="card">
+                        <span class="card-tag tag-yellow"></span>
+                        <h3>Extra support tasks</h3>
+                        <p>Close all leftover support items from previous sprint.</p>
+                        <div class="card-meta"><span>4 comments</span><span>AM</span></div>
+                    </article>
+                    <a class="add-card" href="#create-ticket">+ Add a card</a>
+                </article>
+
+                <article class="column add-list-column">
+                    <a class="add-list-action" href="#board">+ Add list</a>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <section class="modal" id="ticket-detail">
+        <div class="modal-card">
+            <div class="modal-head">
+                <h2>Build kanban details view for Ticket</h2>
+                <a class="close-btn" href="#board">X</a>
+            </div>
+            <p class="modal-text">Create a Trello-like board structure with visible card hierarchy and maintain all ticket details in one accessible modal.</p>
+            <div class="modal-grid">
+                <div><span>Priority</span><strong>High</strong></div>
+                <div><span>Assigned to</span><strong>Amara Stone</strong></div>
+                <div><span>Reporter</span><strong>Rami Kline</strong></div>
+                <div><span>Status</span><strong>In Progress</strong></div>
+            </div>
+            <h3>Description</h3>
+            <p class="modal-text">Design and present a Trello-like planning board for Ticket while keeping interactions clear and preserving the neo-brutalist visual personality.</p>
+            <h3>Acceptance Criteria</h3>
+            <ul>
+                <li>Columns and cards visually match a Trello-like board rhythm.</li>
+                <li>Ticket details include description, criteria, attachments, subtasks, activity log, and comments.</li>
+                <li>Edit and Delete actions are visible in column headers.</li>
+            </ul>
+
+            <div class="detail-tabs">
+                <input type="radio" name="ticket-detail-tab" id="tab-attachments" checked>
+                <input type="radio" name="ticket-detail-tab" id="tab-activity">
+                <div class="tab-controls">
+                    <label for="tab-attachments">Attachments</label>
+                    <label for="tab-activity">Activity Log</label>
+                </div>
+                <div class="tab-panels">
+                    <section class="tab-panel panel-attachments">
+                        <div class="detail-list">
+                            <article>
+                                <span class="chip">PNG</span>
+                                <p>ticket-kanban-wireframe.png</p>
+                            </article>
+                            <article>
+                                <span class="chip">FIG</span>
+                                <p>detail-panel-v2.fig</p>
+                            </article>
+                        </div>
+                    </section>
+                    <section class="tab-panel panel-activity">
+                        <div class="detail-log">
+                            <p><strong>10:42 AM</strong> Amara moved ticket to In Progress.</p>
+                            <p><strong>9:15 AM</strong> Rami updated acceptance criteria.</p>
+                            <p><strong>Yesterday</strong> Sana attached design wireframes.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <h3>Subtasks</h3>
+            <ul class="detail-checklist">
+                <li><span class="check is-done"></span>Map IA</li>
+                <li><span class="check is-done"></span>Draft visual tokens</li>
+                <li><span class="check"></span>Compose ticket details</li>
+                <li><span class="check"></span>Review mobile stacking</li>
+            </ul>
+            <h3>Comments</h3>
+            <div class="detail-comments">
+                <article>
+                    <p><strong>Rami</strong> Keep the board familiar first, then layer branding and styling.</p>
+                </article>
+                <article>
+                    <p><strong>Amara</strong> I kept dense card spacing and moved detail-heavy content to this modal.</p>
+                </article>
+                <article class="comment-input">
+                    <p>Add comment...</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="modal" id="create-ticket">
+        <div class="modal-card">
+            <div class="modal-head">
+                <h2>Create Ticket</h2>
+                <a class="close-btn" href="#board">X</a>
+            </div>
+            <div class="form-preview">
+                <label>Title<div class="field">Improve onboarding checklist hierarchy</div></label>
+                <label>Description<div class="field field-lg">Clarify first-run tasks and streamline product to design handoff.</div></label>
+                <div class="form-row">
+                    <label>Priority<div class="field">High</div></label>
+                    <label>Assigned to<div class="field">Sana Lee</div></label>
+                </div>
+                <label>Acceptance Criteria<div class="field">Checklist for scope, outcome, and release readiness.</div></label>
+            </div>
+            <div class="modal-actions">
+                <a class="btn" href="#board">Cancel</a>
+                <a class="btn btn-primary" href="#board">Create Ticket</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

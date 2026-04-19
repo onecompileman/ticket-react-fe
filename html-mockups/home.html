@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="home-shell" id="home">
+        <header class="home-topbar">
+            <div class="brand-wrap">
+                <span class="brand-mark">T</span>
+                <h1>Ticket</h1>
+            </div>
+            <div class="topbar-actions">
+                <a class="action-btn" href="index.html">Open Board</a>
+                <a class="action-btn action-btn-primary" href="#add-board">Add Board</a>
+                <div class="user-nav">
+                    <img class="user-avatar-img" src="https://i.pravatar.cc/72?img=12" alt="User avatar">
+                    <a class="action-btn logout-btn" href="#home">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="home-content">
+            <section class="board-section">
+                <div class="section-head">
+                    <h2>My Ticket Boards</h2>
+                    <a class="section-link" href="#add-board">+ Add</a>
+                </div>
+                <div class="board-grid">
+                    <article class="board-card board-card-lilac">
+                        <h3>Marketing Sprint</h3>
+                        <p>18 tickets • Updated 2h ago</p>
+                        <div class="board-card-actions">
+                            <a href="index.html">Open</a>
+                            <a class="danger" href="#delete-board">Delete</a>
+                        </div>
+                    </article>
+                    <article class="board-card board-card-mint">
+                        <h3>Design QA</h3>
+                        <p>12 tickets • Updated yesterday</p>
+                        <div class="board-card-actions">
+                            <a href="index.html">Open</a>
+                            <a class="danger" href="#delete-board">Delete</a>
+                        </div>
+                    </article>
+                    <article class="board-card board-card-blue">
+                        <h3>Bug Fix Wave</h3>
+                        <p>9 tickets • Updated 30m ago</p>
+                        <div class="board-card-actions">
+                            <a href="index.html">Open</a>
+                            <a class="danger" href="#delete-board">Delete</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="board-section">
+                <div class="section-head">
+                    <h2>Shared Ticket Boards</h2>
+                </div>
+                <div class="board-grid">
+                    <article class="board-card board-card-cream">
+                        <h3>Client Handoff</h3>
+                        <p>Shared by Sana • 25 tickets</p>
+                        <div class="board-card-actions">
+                            <a href="index.html">Open</a>
+                            <a class="danger" href="#delete-board">Delete</a>
+                        </div>
+                    </article>
+                    <article class="board-card board-card-peach">
+                        <h3>Website Refresh</h3>
+                        <p>Shared by Rami • 14 tickets</p>
+                        <div class="board-card-actions">
+                            <a href="index.html">Open</a>
+                            <a class="danger" href="#delete-board">Delete</a>
+                        </div>
+                    </article>
+                    <article class="board-card board-card-lilac">
+                        <h3>Operations</h3>
+                        <p>Shared by Mona • 7 tickets</p>
+                        <div class="board-card-actions">
+                            <a href="index.html">Open</a>
+                            <a class="danger" href="#delete-board">Delete</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <section class="modal" id="add-board">
+        <div class="modal-card">
+            <div class="modal-head">
+                <h3>Add Board</h3>
+                <a class="close-btn" href="#home">X</a>
+            </div>
+
+            <div class="form-grid">
+                <label>
+                    <span>Title</span>
+                    <div class="field">Q2 Product Launch</div>
+                </label>
+                <label>
+                    <span>Description</span>
+                    <div class="field field-lg">Plan ticket flow for launch goals, milestones, and release checks.</div>
+                </label>
+                <label>
+                    <span>Color</span>
+                    <div class="color-row">
+                        <span class="color-chip chip-lilac"></span>
+                        <span class="color-chip chip-mint"></span>
+                        <span class="color-chip chip-blue"></span>
+                        <span class="color-chip chip-peach"></span>
+                        <span class="color-chip chip-cream"></span>
+                    </div>
+                </label>
+            </div>
+
+            <div class="modal-actions">
+                <a class="action-btn" href="#home">Cancel</a>
+                <a class="action-btn action-btn-primary" href="#home">Create Board</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="modal" id="delete-board">
+        <div class="modal-card modal-card-small">
+            <div class="modal-head">
+                <h3>Delete Board</h3>
+                <a class="close-btn" href="#home">X</a>
+            </div>
+            <p class="delete-copy">This will remove the board from your list. Do you want to continue?</p>
+            <div class="modal-actions">
+                <a class="action-btn" href="#home">Cancel</a>
+                <a class="action-btn danger-btn" href="#home">Delete</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

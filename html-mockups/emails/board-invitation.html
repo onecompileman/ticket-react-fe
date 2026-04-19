@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>You're invited to a Ticket board</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e8e1f1;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1d1d1d;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+            display: block;
+            max-width: 100%;
+        }
+
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background-color: #e8e1f1;
+            padding: 24px 12px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 640px;
+            background-color: #fffaf3;
+            border: 2px solid #8d8d97;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #dbe8f7 0%, #f2e8d5 100%);
+            padding: 28px 32px 20px;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            min-width: 40px;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 20px;
+            border: 2px solid #8d8d97;
+            border-radius: 12px;
+            background-color: #ffffff;
+            vertical-align: middle;
+        }
+
+        .brand-name {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            vertical-align: middle;
+            line-height: 24px;
+        }
+
+        .brand-row {
+            width: auto;
+        }
+
+        .brand-row td {
+            vertical-align: middle;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 2px solid #8d8d97;
+            border-radius: 999px;
+            background-color: #ffffff;
+        }
+
+        .hero h1 {
+            margin: 18px 0 12px;
+            font-size: 34px;
+            line-height: 40px;
+        }
+
+        .hero p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 26px;
+            max-width: 480px;
+        }
+
+        .content {
+            padding: 28px 32px 12px;
+            background-color: #fffdf9;
+        }
+
+        .invite-card {
+            border: 2px solid #8d8d97;
+            border-radius: 20px;
+            background-color: #ffffff;
+        }
+
+        .invite-card td {
+            padding: 18px 20px;
+        }
+
+        .invite-card .label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #5f5f67;
+        }
+
+        .invite-card .value {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+        }
+
+        .copy {
+            padding: 22px 0 10px;
+            font-size: 15px;
+            line-height: 25px;
+        }
+
+        .button-wrap {
+            padding: 10px 0 26px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1d1d1d;
+            text-decoration: none;
+            border: 2px solid #8d8d97;
+            border-radius: 999px;
+            background-color: #dcebdd;
+        }
+
+        .secondary {
+            margin: 0;
+            padding: 0 0 24px;
+            font-size: 14px;
+            line-height: 24px;
+            color: #4f4f57;
+        }
+
+        .footer {
+            padding: 0 32px 28px;
+            font-size: 12px;
+            line-height: 20px;
+            color: #66666f;
+        }
+
+        .footer a {
+            color: #1d1d1d;
+        }
+
+        @media screen and (max-width: 600px) {
+            .wrapper {
+                padding: 12px;
+            }
+
+            .hero,
+            .content,
+            .footer {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            .hero h1 {
+                font-size: 28px !important;
+                line-height: 34px !important;
+            }
+
+            .invite-card td {
+                display: block;
+                width: 100% !important;
+                padding: 16px 18px !important;
+            }
+
+            .brand-name {
+                display: block;
+                margin-left: 0 !important;
+                margin-top: 10px;
+                line-height: 28px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;">
+        You have been invited to collaborate on a Ticket board.
+    </div>
+
+    <table role="presentation" class="wrapper" width="100%">
+        <tr>
+            <td align="center">
+                <table role="presentation" class="container" width="100%">
+                    <tr>
+                        <td class="hero">
+                            <table role="presentation" class="brand-row">
+                                <tr>
+                                    <td><span class="brand-badge">T</span></td>
+                                    <td style="padding-left:10px;"><span class="brand-name">Ticket</span></td>
+                                </tr>
+                            </table>
+                            <div class="eyebrow">Board Invitation</div>
+                            <h1>You have been invited to join a board</h1>
+                            <p>A teammate shared a Ticket board with you so you can review tasks, collaborate on progress, and stay aligned on upcoming work.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="content">
+                            <table role="presentation" class="invite-card" width="100%">
+                                <tr>
+                                    <td width="50%">
+                                        <span class="label">Board</span>
+                                        <span class="value">Marketing Sprint</span>
+                                    </td>
+                                    <td width="50%">
+                                        <span class="label">Invited by</span>
+                                        <span class="value">Amara Stone</span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <p class="copy">Open the board to view current tickets, deadlines, and shared updates. If you do not have access yet, sign in with the email address where you received this invitation.</p>
+
+                            <div class="button-wrap">
+                                <a class="button" href="https://example.com/boards/marketing-sprint">Open Board</a>
+                            </div>
+
+                            <p class="secondary">If the button does not work, copy and paste this link into your browser:<br>https://example.com/boards/marketing-sprint</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="footer">
+                            This invitation was sent by Ticket. If you were not expecting it, you can ignore this email. For help, contact <a href="mailto:support@ticket.app">support@ticket.app</a>.
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

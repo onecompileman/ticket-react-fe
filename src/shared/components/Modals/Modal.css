@@ -1,0 +1,75 @@
+
+.modal-card {
+  width: min(560px, 100%);
+  border: var(--line);
+  border-radius: 14px;
+  background: #f5f3ec;
+  box-shadow: 0 12px 28px rgba(30, 30, 34, 0.2);
+  padding: 0.8rem;
+}
+
+.modal-card-small {
+  width: min(420px, 100%);
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+
+.modal-head h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-btn {
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  border: var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* ── Form ── */
+.form-grid {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.form-grid label span {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.88rem;
+}
+
+.field {
+  width: 100%;
+  border: var(--line);
+  border-radius: 12px;
+  background: var(--white);
+  padding: 0.65rem;
+  box-shadow: 0 1px 0 rgba(35, 35, 38, 0.2);
+  font-size: 0.9rem;
+  resize: none;
+}
+
+.field-lg {
+  min-height: 92px;
+}
+
+/* ── Color chips ── */
+/* ── Modal footer ── */
+.modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}

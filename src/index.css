@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap");
+
+:root {
+	color: #171717;
+	font-family: "Space Grotesk", "Segoe UI", sans-serif;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	--ink: #171717;
+	--paper: #f6f0e6;
+	--panel: rgba(252, 252, 252, 0.82);
+	--sky: #d9e6f7;
+	--mint: #dcebdd;
+	--sand: #efe4cc;
+	--rose: #efd9d9;
+	--white: #fcfcfc;
+	--line: 1.5px solid #8d8d97;
+	--shadow: 0 3px 0 rgba(35, 35, 38, 0.2);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	color: var(--ink);
+	background: #ebe4d9;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+	font: inherit;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.field-error {
+	border-color: #d9534f;
+}
+
+.field-error-msg {
+	color: #d9534f;
+	font-size: 0.85rem;
+	margin-top: 0.25rem;
+	display: block;
+}

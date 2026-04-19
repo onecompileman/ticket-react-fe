@@ -1,0 +1,27 @@
+
+.color-row {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.color-chip {
+  width: 32px;
+  height: 32px;
+  border: var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+  background: none;
+  transition: outline 0.1s;
+}
+
+.color-chip.chip-selected {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.chip-lilac { background: var(--lilac); }
+.chip-mint  { background: var(--mint); }
+.chip-blue  { background: var(--blue-card); }
+.chip-peach { background: var(--peach); }
+.chip-cream { background: var(--cream); }
+

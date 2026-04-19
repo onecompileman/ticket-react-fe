@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>A ticket moved to a new list</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e8e1f1;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1d1d1d;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background-color: #e8e1f1;
+            padding: 24px 12px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 640px;
+            background-color: #fffaf3;
+            border: 2px solid #8d8d97;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #dcebdd 0%, #dbe8f7 56%, #f2e8d5 100%);
+            padding: 28px 32px 20px;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            min-width: 40px;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 20px;
+            border: 2px solid #8d8d97;
+            border-radius: 12px;
+            background-color: #ffffff;
+            vertical-align: middle;
+        }
+
+        .brand-name {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            vertical-align: middle;
+            line-height: 24px;
+        }
+
+        .brand-row {
+            width: auto;
+        }
+
+        .brand-row td {
+            vertical-align: middle;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 2px solid #8d8d97;
+            border-radius: 999px;
+            background-color: #ffffff;
+        }
+
+        .hero h1 {
+            margin: 18px 0 12px;
+            font-size: 34px;
+            line-height: 40px;
+        }
+
+        .hero p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 26px;
+            max-width: 500px;
+        }
+
+        .content {
+            padding: 28px 32px 12px;
+            background-color: #fffdf9;
+        }
+
+        .detail-card {
+            width: 100%;
+            border: 2px solid #8d8d97;
+            border-radius: 20px;
+            background-color: #ffffff;
+        }
+
+        .detail-card td {
+            padding: 18px 20px;
+            vertical-align: top;
+        }
+
+        .detail-card .label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #5f5f67;
+        }
+
+        .detail-card .value {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+        }
+
+        .flow-card {
+            width: 100%;
+            margin-top: 14px;
+            border: 2px solid #8d8d97;
+            border-radius: 20px;
+            background-color: #f7f5ef;
+        }
+
+        .flow-card td {
+            padding: 18px 20px;
+            text-align: center;
+        }
+
+        .stage {
+            display: inline-block;
+            padding: 10px 16px;
+            border: 2px solid #8d8d97;
+            border-radius: 999px;
+            background-color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .arrow {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+            color: #4f4f57;
+        }
+
+        .copy {
+            padding: 22px 0 10px;
+            font-size: 15px;
+            line-height: 25px;
+        }
+
+        .button-wrap {
+            padding: 10px 0 26px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1d1d1d;
+            text-decoration: none;
+            border: 2px solid #8d8d97;
+            border-radius: 999px;
+            background-color: #dbe8f7;
+        }
+
+        .secondary {
+            margin: 0;
+            padding: 0 0 24px;
+            font-size: 14px;
+            line-height: 24px;
+            color: #4f4f57;
+        }
+
+        .footer {
+            padding: 0 32px 28px;
+            font-size: 12px;
+            line-height: 20px;
+            color: #66666f;
+        }
+
+        .footer a {
+            color: #1d1d1d;
+        }
+
+        @media screen and (max-width: 600px) {
+            .wrapper {
+                padding: 12px;
+            }
+
+            .hero,
+            .content,
+            .footer {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            .hero h1 {
+                font-size: 28px !important;
+                line-height: 34px !important;
+            }
+
+            .detail-card td,
+            .flow-card td {
+                display: block;
+                width: 100% !important;
+                padding: 16px 18px !important;
+            }
+
+            .brand-name {
+                display: block;
+                margin-left: 0 !important;
+                margin-top: 10px;
+                line-height: 28px !important;
+            }
+
+            .arrow {
+                display: block;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;">
+        A ticket on your board moved from one list to another.
+    </div>
+
+    <table role="presentation" class="wrapper" width="100%">
+        <tr>
+            <td align="center">
+                <table role="presentation" class="container" width="100%">
+                    <tr>
+                        <td class="hero">
+                            <table role="presentation" class="brand-row">
+                                <tr>
+                                    <td><span class="brand-badge">T</span></td>
+                                    <td style="padding-left:10px;"><span class="brand-name">Ticket</span></td>
+                                </tr>
+                            </table>
+                            <div class="eyebrow">Ticket Update</div>
+                            <h1>A ticket moved to a new list</h1>
+                            <p>One of the tickets on your shared board has advanced to a different stage. Review the change to stay aligned with the current workflow.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="content">
+                            <table role="presentation" class="detail-card">
+                                <tr>
+                                    <td width="50%">
+                                        <span class="label">Board</span>
+                                        <span class="value">Marketing Sprint</span>
+                                    </td>
+                                    <td width="50%">
+                                        <span class="label">Moved by</span>
+                                        <span class="value">Amara Stone</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <span class="label">Ticket</span>
+                                        <span class="value">Prepare launch checklist for Q2 release</span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table role="presentation" class="flow-card">
+                                <tr>
+                                    <td width="42%">
+                                        <span class="label">From</span>
+                                        <span class="stage">In Progress</span>
+                                    </td>
+                                    <td width="16%" class="arrow">→</td>
+                                    <td width="42%">
+                                        <span class="label">To</span>
+                                        <span class="stage">In Review</span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <p class="copy">Open the board to review the ticket details, add comments, or continue the next action. This template works well for movement notifications between any two lists on a board.</p>
+
+                            <div class="button-wrap">
+                                <a class="button" href="https://example.com/boards/marketing-sprint/tickets/q2-release-checklist">View Ticket</a>
+                            </div>
+
+                            <p class="secondary">If the button does not work, copy and paste this link into your browser:<br>https://example.com/boards/marketing-sprint/tickets/q2-release-checklist</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="footer">
+                            This notification was sent because you are a participant on this board. To adjust notification settings later, manage them in your Ticket workspace. For help, contact <a href="mailto:support@ticket.app">support@ticket.app</a>.
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

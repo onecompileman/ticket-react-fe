@@ -1,0 +1,217 @@
+/* ── Local palette ── */
+:root {
+  --lilac: #ece7f6;
+  --blue-card: #e7edf5;
+  --cream: #f4f0e2;
+  --peach: #efe8dd;
+  --bg-a: #d8d4f0;
+  --bg-b: #f1efe8;
+}
+
+/* ── Page shell ── */
+.home-shell {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 1rem auto 2rem;
+}
+
+/* ── Topbar ── */
+.home-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #f5f3ec;
+  border: var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 0.7rem 0.8rem;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.brand-wrap .brand-mark {
+  width: 32px;
+  height: 32px;
+  display: inline-grid;
+  place-items: center;
+  border: var(--line);
+  border-radius: 8px;
+  background: var(--blue-card);
+  font-weight: 600;
+}
+
+.home-topbar h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.user-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.user-avatar-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: var(--line);
+  background: var(--white);
+  display: grid;
+  place-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ── Shared button base ── */
+.action-btn,
+.section-link,
+.board-card-actions button {
+  border: var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  padding: 0.36rem 0.72rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.action-btn-primary {
+  background: var(--white);
+  font-weight: 600;
+}
+
+.logout-btn {
+  background: #edd9db;
+}
+
+/* ── Content grid ── */
+.home-content {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* ── Board section ── */
+.board-section {
+  background: rgba(255, 255, 255, 0.45);
+  border: var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 0.8rem;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.section-head h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ── Board grid ── */
+.board-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* ── Board card ── */
+.board-card {
+  border: var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.board-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.board-card p {
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.board-card-lilac  { background: var(--lilac); }
+.board-card-mint   { background: var(--mint); }
+.board-card-blue   { background: var(--blue-card); }
+.board-card-cream  { background: var(--cream); }
+.board-card-peach  { background: var(--peach); }
+
+.board-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.board-card-actions button.danger,
+.danger-btn {
+  background: #edd9db;
+}
+
+/* ── Modal backdrop ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(34, 31, 45, 0.3);
+  z-index: 20;
+}
+
+/* ── Modal card ── */
+
+.delete-copy {
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .board-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .home-shell {
+    width: calc(100% - 1rem);
+  }
+
+  .home-topbar,
+  .section-head,
+  .modal-actions,
+  .board-card-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .board-grid {
+    grid-template-columns: 1fr;
+  }
+}
