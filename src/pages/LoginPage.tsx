@@ -48,7 +48,7 @@ export const LoginPage = () => {
     showLoading();
     const tokenResponse = await authCognitoService.getLoginToken(code);
 
-    localStorage.setItem('access_token', tokenResponse.access_token);
+    localStorage.setItem('access_token', tokenResponse.access_token); 
     localStorage.setItem('id_token', tokenResponse.id_token);
 
     const activeUser = await authService.getActiveUser();
