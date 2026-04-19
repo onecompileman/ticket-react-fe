@@ -44,7 +44,7 @@ export const LoginPage = () => {
   const { user, setUser } = useUserStore();
   const { showLoading, hideLoading } = useLoadingStore();
 
-  const fetchToken = async (code) => {
+  const fetchToken = async (code: string) => {
     showLoading();
     const tokenResponse = await authCognitoService.getLoginToken(code);
 
@@ -69,7 +69,7 @@ export const LoginPage = () => {
 
     const code = searchParams.get('code');
     if (code) {
-      fetchToken(code);
+      void fetchToken(code);
     }
   }, [searchParams, user]);
 

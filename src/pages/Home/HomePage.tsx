@@ -102,7 +102,7 @@ export const HomePage = () => {
             icon: 'error',
             title: 'Deletion Failed',
             text:
-              error.message ||
+              (error instanceof Error ? error.message : '') ||
               'An error occurred while deleting the board. Please try again.',
           });
         }
@@ -233,7 +233,15 @@ const BoardSection = ({
           <p>{board.board_description}</p>
           <div className="board-card-actions">
             <button onClick={() => onOpen(board)}>Open</button>
-            <button className="danger" onClick={() => onDelete(board.id)}>
+            <button
+              className="danger"
+              onClick={() => {
+                if (typeof board.id === 'number') {
+                  onDelete(board.id);
+                }
+              }}
+              disabled={typeof board.id !== 'number'}
+            >
               Delete
             </button>
           </div>

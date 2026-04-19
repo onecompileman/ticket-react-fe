@@ -365,7 +365,7 @@ export const ViewTicketModal = ({
   };
 
   const refreshTicketDetailsSilently = async () => {
-    if (typeof ticket.id !== "number") {
+    if (!ticket || typeof ticket.id !== "number") {
       return;
     }
 
