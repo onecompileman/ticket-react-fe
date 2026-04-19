@@ -71,3 +71,25 @@ export default defineConfig([
   },
 ])
 ```
+
+## GitHub Actions And Firebase Hosting
+
+This project now includes:
+
+- `.github/workflows/ci.yml` for install, lint, and production build checks.
+- `.github/workflows/firebase-deploy.yml` for deploying the built Vite app to Firebase Hosting on `main`.
+
+Create these repository secrets in GitHub before enabling deployment:
+
+- `VITE_API_BASE_URL`
+- `VITE_COGNITO_DOMAIN`
+- `VITE_COGNITO_CLIENT_ID`
+- `VITE_COGNITO_REDIRECT_URI`
+- `FIREBASE_PROJECT_ID`
+- `FIREBASE_SERVICE_ACCOUNT`
+
+Notes:
+
+- `FIREBASE_SERVICE_ACCOUNT` should contain the full Firebase service account JSON for a deploy-capable service account.
+- `.env.production` is ignored and can be used locally.
+- `.env.production.example` shows the expected Vite variables.
