@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {
   DndContext,
   PointerSensor,
@@ -61,6 +61,7 @@ const getErrorMessage = (error: unknown, fallback: string) => {
 
 export const BoardPage = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const [boardName, setBoardName] = useState('Board');
   const [boardColor, setBoardColor] = useState('lilac');
   const [boardUsers, setBoardUsers] = useState<User[]>([]);
@@ -568,7 +569,9 @@ export const BoardPage = () => {
 
   const handleTicketUpdated = (updatedTicket: Ticket) => {
     const targetColumnId =
-      updatedTicket.column && typeof updatedTicket.column === 'object' && 'id' in updatedTicket.column
+      updatedTicket.column &&
+      typeof updatedTicket.column === 'object' &&
+      'id' in updatedTicket.column
         ? updatedTicket.column.id
         : undefined;
 
@@ -636,7 +639,10 @@ export const BoardPage = () => {
     });
 
     setSelectedTicket((previousSelectedTicket) => {
-      if (!previousSelectedTicket || previousSelectedTicket.ticket.id !== updatedTicket.id) {
+      if (
+        !previousSelectedTicket ||
+        previousSelectedTicket.ticket.id !== updatedTicket.id
+      ) {
         return previousSelectedTicket;
       }
 
@@ -651,12 +657,17 @@ export const BoardPage = () => {
     setBoardLists((previousLists) =>
       previousLists.map((column) => ({
         ...column,
-        tickets: (column.tickets ?? []).filter((ticket) => ticket.id !== ticketId),
+        tickets: (column.tickets ?? []).filter(
+          (ticket) => ticket.id !== ticketId,
+        ),
       })),
     );
 
     setSelectedTicket((previousSelectedTicket) => {
-      if (!previousSelectedTicket || previousSelectedTicket.ticket.id !== ticketId) {
+      if (
+        !previousSelectedTicket ||
+        previousSelectedTicket.ticket.id !== ticketId
+      ) {
         return previousSelectedTicket;
       }
 
@@ -721,9 +732,9 @@ export const BoardPage = () => {
             <button
               type="button"
               className="nav-create"
-              onClick={() => handleOpenCreateTicketModal()}
+              onClick={() => navigate('/home', { replace: true })}
             >
-              Create
+              Back to Home
             </button>
             <input
               className="nav-search"
@@ -740,7 +751,10 @@ export const BoardPage = () => {
 
         <section className="board-nav">
           <div className="board-nav-left">
-            <span className={`board-title-color board-color-${boardColor}`} aria-hidden="true" />
+            <span
+              className={`board-title-color board-color-${boardColor}`}
+              aria-hidden="true"
+            />
             <h1>{boardName}</h1>
             <button
               type="button"

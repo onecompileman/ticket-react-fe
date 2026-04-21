@@ -93,6 +93,10 @@
   font-weight: 600;
 }
 
+.import-btn {
+  background: var(--sky);
+}
+
 .logout-btn {
   background: #edd9db;
 }

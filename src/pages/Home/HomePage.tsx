@@ -14,6 +14,8 @@ import { ticketService } from '../../api/services/TicketService';
 import Swal from 'sweetalert2';
 import { useLoadingStore } from '../../shared/stores/loadingStore';
 import type { TicketBoard } from '../../shared/models/TicketBoard';
+import { ImportBoardModal } from '../../shared/components/Modals/ImportBoardModal/ImportBoardModal';
+import type { ImportBoardJsonPayload } from '../../api/services/TicketBoardService';
 
 const PENDING_INVITE_CODE_KEY = 'ticket_pending_invite_code';
 
@@ -22,6 +24,7 @@ export const HomePage = () => {
   const { setModalState, showModal } = useConfirmationModalStore();
 
   const [addOpen, setAddOpen] = useState(false);
+  const [importOpen, setImportOpen] = useState(false);
 
   const { showLoading, hideLoading } = useLoadingStore();
 
@@ -115,6 +118,31 @@ export const HomePage = () => {
     showModal();
   };
 
+  const handleImportBoard = async (payload: ImportBoardJsonPayload) => {
+    showLoading();
+
+    try {
+      await ticketBoardService.importBoardJsonStart(payload);
+      setImportOpen(false);
+
+      await Swal.fire({
+        icon: 'success',
+        title: 'Import Started',
+        text: 'Import is running successfully. We will notify you once it is done.',
+      });
+    } catch (error) {
+      await Swal.fire({
+        icon: 'error',
+        title: 'Import Failed',
+        text:
+          (error instanceof Error ? error.message : '') ||
+          'Unable to start board import. Please try again.',
+      });
+    } finally {
+      hideLoading();
+    }
+  };
+
   const handleLogout = () => {
     const modalState: ConfirmationModalProps = {
       isOpen: true,
@@ -139,6 +167,12 @@ export const HomePage = () => {
           <h1>Ticket</h1>
         </div>
         <div className="topbar-actions">
+          <button
+            className="action-btn import-btn"
+            onClick={() => setImportOpen(true)}
+          >
+            Import Board
+          </button>
           <div className="user-nav">
             <div className="user-avatar-img">
               {user ? getUserInitials(user.full_name) : '?'}
@@ -192,6 +226,11 @@ export const HomePage = () => {
         isOpen={addOpen}
         onClose={() => setAddOpen(false)}
         onCreate={handleCreateBoard}
+      />
+      <ImportBoardModal
+        isOpen={importOpen}
+        onClose={() => setImportOpen(false)}
+        onImport={handleImportBoard}
       />
     </div>
   );
