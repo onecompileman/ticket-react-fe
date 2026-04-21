@@ -125,13 +125,13 @@ export const HomePage = () => {
       await ticketBoardService.importBoardJsonStart(payload);
       setImportOpen(false);
 
-      await Swal.fire({
+      Swal.fire({
         icon: 'success',
         title: 'Import Started',
         text: 'Import is running successfully. We will notify you once it is done.',
       });
     } catch (error) {
-      await Swal.fire({
+      Swal.fire({
         icon: 'error',
         title: 'Import Failed',
         text:
